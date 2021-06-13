@@ -80,9 +80,8 @@ class QLearningAgent(ReinforcementAgent):
         """
         "*** YOUR CODE HERE ***"
         bestAction = [None]
-        legalActions = self.getLegalActions(state)
         maxqvalue = -999999
-        for action in legalActions:
+        for action in self.getLegalActions(state):
             if self.getQValue(state, action) > maxqvalue:
                 maxqvalue = self.getQValue(state, action)
                 bestAction = [action]
